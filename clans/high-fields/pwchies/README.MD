@@ -1,3 +1,3 @@
 # Pwchie Legends
 
-- [Mira](/mira/)
+- [Mira](mira)
