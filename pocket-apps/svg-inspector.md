@@ -67,7 +67,6 @@ The tool works entirely in your browser - no server uploads, no data leaves your
 ## 💻 Usage Example
 
 ```
-html
 <!-- Paste complex SVG like this -->
 <svg viewBox="0 0 100 100">
   <g id="background">
@@ -80,8 +79,8 @@ html
 Then toggle off decoration, change bg-rect to purple, export minified - all visually!
 
 ## 🌐 Live Demo
-Try it online: [SVG Inspector Pro Demo](https://pwchin.info/is-app/pocket-apps/svg-inspector-pro.html)
-Download this file: [Download SVG Inspector Pro](https://github.com/PwchiWorld/pwchin/tree/v1)
+* Try it online: [SVG Inspector Pro Demo](https://pwchin.info/is-app/pocket-apps/svg-inspector-pro.html)
+* Download this pocket-webapp: [Download SVG Inspector Pro](https://github.com/PwchiWorld/pwchin/tree/v1)
 
 
 
@@ -109,3 +108,4 @@ Feel free to modify the code:
 
 ## 📄 License
 MIT - Use freely in personal and commercial projects
+
