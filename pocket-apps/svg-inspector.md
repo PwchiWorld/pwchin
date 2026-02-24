@@ -2,14 +2,14 @@
 
 A lightweight, client-side web application for visually inspecting, editing, and optimizing SVG files. Paste any SVG code, toggle elements visibility, change colors in real-time, and export optimized versions.
 
-![SVG Inspector Pro Interface](https://via.placeholder.com/800x400/2c3e50/ffffff?text=SVG+Inspector+Pro+Interface)
+![SVG Inspector Pro Interface](i/screenshot-svg-inspector-pro.png)
 
-[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://pwchiworld.github.io/svg-inspector-pro)
+[![Live Demo](https://img.shields.io/badge/demo-live-brightgreen)](https://pwchin.info/is-app/pocket-apps/svg-inspector-pro.html)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-yellow)
 ![SVG](https://img.shields.io/badge/SVG-optimization-orange)
 
-## ?? Overview
+## 🔍 Overview
 
 **SVG Inspector Pro** solves a common problem when working with complex or non-standard SVG files: understanding structure and making quick visual adjustments. Instead of manually editing code, you can:
 
@@ -20,7 +20,7 @@ A lightweight, client-side web application for visually inspecting, editing, and
 - **Minify** output for production use
 - **Download** as PNG raster image
 
-## ? Key Features
+## ✨ Key Features
 
 | Feature | Description |
 |---------|-------------|
@@ -31,7 +31,7 @@ A lightweight, client-side web application for visually inspecting, editing, and
 | **Dual Export** | Standard SVG or minified version (removes comments, whitespace) |
 | **PNG Export** | Rasterize SVG to PNG at 2x resolution |
 
-## ?? How It Works
+## 🚀 How It Works
 
 1. **Paste** your SVG code into the textarea
 2. **Click** "Load SVG" to parse and inspect
@@ -41,7 +41,7 @@ A lightweight, client-side web application for visually inspecting, editing, and
 
 The tool works entirely in your browser - no server uploads, no data leaves your machine.
 
-## ?? Use Cases
+## 📋 Use Cases
 
 - **Icon Libraries**: Clean up icon sets by removing unused layers
 - **Illustration Editing**: Quickly change colors without opening design software
@@ -49,7 +49,7 @@ The tool works entirely in your browser - no server uploads, no data leaves your
 - **Debugging**: Understand structure of complex, poorly formatted SVGs
 - **Batch Preparation**: Visually inspect and prepare SVGs for development
 
-## ??? Technical Details
+## 🛠️ Technical Details
 
 - Pure HTML/CSS/JavaScript - no dependencies
 - Works offline - save the HTML file locally
@@ -57,14 +57,14 @@ The tool works entirely in your browser - no server uploads, no data leaves your
 - Handles non-standard SVG structures gracefully
 - Responsive design works on mobile devices
 
-## ?? Interface Guide
+## 📸 Interface Guide
 
 - **Left Panel**: SVG input area, filename input, and list of all elements with IDs
 - **Right Panel**: Live preview with sticky controls, export buttons
 - **Element Controls**: Each ID gets a toggle switch and color picker
 - **Hover Effect**: Mouse over any control to highlight corresponding element
 
-## ?? Usage Example
+## 💻 Usage Example
 
 ```
 html
@@ -79,27 +79,27 @@ html
 ```
 Then toggle off decoration, change bg-rect to purple, export minified - all visually!
 
-## ?? Live Demo
-Try it online: ![SVG Inspector Pro Demo](https://img.shields.io/badge/JavaScript-ES6-yellow)
-Download this file: ![Download SVG Inspector Pro Demo](https://img.shields.io/badge/JavaScript-ES6-yellow)
+## 🌐 Live Demo
+Try it online: [SVG Inspector Pro Demo](https://pwchin.info/is-app/pocket-apps/svg-inspector-pro.html)
+Download this file: [Download SVG Inspector Pro](https://github.com/PwchiWorld/pwchin/tree/v1)
 
 
 
-## ?? Local Installation
+## 📦 Local Installation
 Download the HTML file
 
 1. Open in any modern browser
 2. Start pasting SVGs!
 3. No build process, no npm install, no configuration needed.
 
-## ?? Notes
+## ⚠️ Notes
 Elements without IDs won't appear in the controls list
 
 * Changes are non-destructive - original code remains in textarea
 * Color picker defaults to gray if fill detection fails
 * PNG export uses canvas at 2x resolution for better quality
 
-## ?? Customization
+## 🔧 Customization
 Feel free to modify the code:
 
 * Adjust gradient backgrounds in the CSS
@@ -107,5 +107,5 @@ Feel free to modify the code:
 * Implement search/filter for elements
 * Add attribute editing beyond fill color
 
-## ?? License
+## 📄 License
 MIT - Use freely in personal and commercial projects
