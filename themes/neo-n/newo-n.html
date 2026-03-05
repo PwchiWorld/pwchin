@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Neo n</title>
+<style>
+
+
+/** Neo n Matrix **/
+#ismatrix{padding:2em 0 0!important;}
+#ismatrix .upc-profile{max-width:1000px;margin:0 auto;padding:2em;background:#000000;font-family:'Courier New',monospace;box-shadow:0 0 30px #00ff00,0 0 60px #003300;border:2px solid #00ff00;position:relative;overflow:hidden;}
+#ismatrix .upc-profile::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:linear-gradient(0deg,transparent 50%,#00ff0010 50%);background-size:100% 4px;pointer-events:none;animation:scan 10s linear infinite;}
+#ismatrix h1.entry-title{display:none;text-align:center;}
+#ismatrix .member-badge-container{text-align:center;margin:0 auto -50px auto;}
+#ismatrix .member-badge{display:inline-block;padding:8px 25px;border-radius:0;font-weight:bold;font-size:14px;background:#000;color:#00ff00;border:2px solid #00ff00;box-shadow:0 0 20px #00ff00,inset 0 0 10px #00ff00;text-transform:uppercase;letter-spacing:4px;font-family:'Courier New',monospace;animation:pulse 1.5s infinite;}
+#ismatrix .member-header-full{display:flex!important;flex-direction:column!important;width:100%!important;margin:-30px auto 0 auto;border-bottom:3px solid #00ff00;box-shadow:0 0 20px #00ff00;position:relative;}
+#ismatrix .member-header-full::after{content:'>_';position:absolute;bottom:-12px;right:10px;color:#00ff00;font-size:20px;font-weight:bold;animation:blink 1s step-end infinite;}
+#ismatrix .upc-top-shortcode,#ismatrix .member-bottom-shortcode{margin:0;padding:0;border-radius:0;border:none;}
+#ismatrix .member-avatar-container{display:block;text-align:center;margin:-40px auto 12px auto;}
+#ismatrix .member-avatar-img{width:180px;height:180px;border:3px solid #00ff00;object-fit:cover;transition:all 0.3s ease;margin:0 auto;border-radius:0%;box-shadow:0 0 30px #00ff00;filter:grayscale(100%) contrast(200%) brightness(80%);image-rendering:pixelated;}
+#ismatrix .member-name{text-align:center;font-size:2.2em;font-weight:900;color:#00ff00;margin:9px auto 0 auto;padding-bottom:1em;border-bottom:2px dashed #00ff00;position:relative;text-transform:uppercase;letter-spacing:4px;text-shadow:0 0 10px #00ff00;font-family:'Courier New',monospace;}
+#ismatrix .member-name::before{content:'< ';color:#00ff00;opacity:0.7;}
+#ismatrix .member-name::after{content:' />';color:#00ff00;opacity:0.7;}
+#ismatrix .member-about{max-width:900px;margin:0 auto 30px;padding:2em;font-family:'Courier New',monospace;color:#00ff00;border:1px dashed #00ff00;background:#0a0a0a;position:relative;}
+#ismatrix .member-about::before{content:'/*';position:absolute;top:-10px;left:10px;color:#00ff00;opacity:0.5;font-size:14px;}
+#ismatrix .member-about::after{content:'*/';position:absolute;bottom:-10px;right:10px;color:#00ff00;opacity:0.5;font-size:14px;}
+#ismatrix .member-about p{display:block;margin:3px auto 4px auto;line-height:1.8;color:#00ff00;font-family:'Courier New',monospace;}
+#ismatrix .member-about h1,#ismatrix .member-about h2,#ismatrix .member-about h3,#ismatrix .member-about h4,#ismatrix .member-about h5,#ismatrix .member-about h6{color:#00ff00;text-transform:uppercase;letter-spacing:2px;text-shadow:0 0 5px #00ff00;}
+#ismatrix .member-about a,#ismatrix .member-about a:visited{color:#00ff00;text-decoration:none;border-bottom:2px solid #00ff00;}
+#ismatrix .member-about a:hover,#ismatrix .member-about a:active,#ismatrix .member-about a:focus{color:#000;background:#00ff00;text-shadow:none;}#ismatrix .member-about blockquote{border-left:4px solid #18ba18;}#ismatrix .member-about blockquote::after{content:'>_';display:block;position:relative;top:0;left:-10px;color:#00ff00;font-size:17px;font-weight:bold;animation:blink 1s step-end infinite;text-align:left;margin-top:-10px;}
+#ismatrix .member-social-wrapper{display:block;max-width:1000px!important;text-align:center;margin:40px auto 0 auto;padding:3em 0 1em;border-top:3px solid #00ff00;background:#0a0a0a;position:relative;}
+#ismatrix .member-social-wrapper::before{content:'[ SOCIAL MATRIX ]';position:absolute;top:-20px;left:50%;transform:translateX(-50%);background:#000;color:#00ff00;padding:10px 30px 10px;font-size:14px;font-family:'Courier New',monospace;z-imdex:10000;border-left:3px solid #00ff00;border-right:3px solid #00ff00;}
+#ismatrix .member-social-wrapper h3{color:#00ff00;margin-bottom:20px;font-size:22px;text-align:center;text-transform:uppercase;letter-spacing:4px;text-shadow:0 0 10px #00ff00;font-family:'Courier New',monospace;display:none;}
+#ismatrix .member-social-list{display:flex;flex-wrap:wrap;gap:15px;justify-content:center;}
+#ismatrix a.member-social-link,#ismatrix a.member-social-link:visited{display:inline-block;padding:12px 30px;color:#000;text-decoration:none;font-weight:bold;transition:all 0.2s ease;border:2px solid #00ff00;border-radius:0;background:#00ff00;text-transform:uppercase;letter-spacing:2px;font-size:0.9em;box-shadow:0 0 20px #00ff00;font-family:'Courier New',monospace;}
+#ismatrix a.member-social-link:hover,#ismatrix a.member-social-link:active{color:#00ff00;background:#000;border-color:#00ff00;box-shadow:0 0 30px #00ff00,inset 0 0 10px #00ff00;}
+#ismatrix .member-edit-wrapper{display:block;width:90%;margin:0 auto 10px auto;text-align:right!important;padding:0;}
+#ismatrix a.member-edit-btn{display:inline-block;padding:3px 15px;color:#00ff00;text-decoration:none;font-weight:bold;font-size:13px;border:2px solid #00ff00;cursor:pointer;text-transform:uppercase;letter-spacing:2px;background:#000;}
+#ismatrix a.member-edit-btn:hover{color:#000;background:#00ff00;box-shadow:0 0 20px #00ff00;}
+#ismatrix .supstars{display:flex;position:relative;top:100%;left:30px;}
+#ismatrix sup.pillit{display:inline-block;color:#00ff00;padding:1em 1.7em 1em;text-align:center;font-size:14px;background-color:#000;border-radius:0;box-shadow:0 0 15px #00ff00,inset 0 0 10px #00ff00;transform:translateY(-6px);border:2px solid #00ff00;text-transform:uppercase;letter-spacing:2px;font-family:'Courier New',monospace;}
+.single-members .entry-header,.single-members .page-header{display:none!important;}
+#primary,.entry-content-wrap,body{padding:0!important;margin:0 auto;background:#0a0a0a;}
+#ismatrix .asadar{display:block;color:#00ff00;font-size:15px;padding:1.5em;box-sizing:border-box;border-left:4px solid #00ff00;border-right:4px solid #00ff00;min-width:300px;margin:0 auto;background:#000;box-shadow:0 0 30px #00ff0020;font-family:'Courier New',monospace;}
+#ismatrix .asadar p{display:block;font-weight:100;margin:3px auto 3.5px auto;line-height:normal;}
+#ismatrix .asadar a,#ismatrix .asadar a:visited{color:#00ff00;text-decoration:none;border-bottom:1px dashed #00ff00;}
+#ismatrix .asadar a:hover,#ismatrix .asadar a:active,#ismatrix .asadar a:focus{color:#000;background:#00ff00;}
+#ismatrix .docolors{color:#00ff00!important;}
+#ismatrix .sss-sharing,#ismatrix .sss-style-horizontal{padding:0;}
+#ismatrix .iswrpuser{display:inline-block;background-color:#000;padding:.3em 1.2em .3em;border-radius:0;margin:0 10px 10px 0;box-shadow:0 0 10px #00ff00;border:2px solid #00ff00;font-family:'Courier New',monospace;}
+.fouser{font-weight:500;margin-right:8px;font-style:normal;color:#00ff00;text-shadow:0 0 5px #00ff00;}
+#inner-wrap,.wrap .kt-clear{background:transparent!important;padding:0!important;margin:0!important;}
+#ismatrix #isdarkfooter{display:block;width:100%;height:auto;min-height:100px;margin:0 auto;padding:2em 0;box-sizing:border-box;text-align:center;background:#000;border-top:4px solid #00ff00;border-bottom:4px solid #00ff00;position:relative;flex-direction:row;}
+#ismatrix #isdarkfooter::before{content:'01001110 01000101 01001111 01001110';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:#00ff00;opacity:.3;font-size:24px;font-family:'Courier New',monospace;white-space:nowrap;pointer-events:none;animation:matrix 10s linear infinite;}
+#ismatrix #isdarkfooter .socembed .sss-theme-light .sss-network{background:#000;border:2px solid #00ff00;border-radius:0;}
+#ismatrix #isdarkfooter .socembed .sss-theme-light svg.sss-icon-svg{filter:brightness(0) invert(1) sepia(1) hue-rotate(60deg) saturate(10) brightness(1);}
+#ismatrix .isflexiglass{display:flex;flex-direction:row;gap:15px;width:90%;margin:0 auto;color:#00ff00;padding:0!important;font-family:'Courier New',monospace;}
+#ismatrix .member-footer .backhome,#ismatrix .member-footer .socembed{min-width:50%;padding:0!important;}
+#ismatrix #isdarkfooter .backhome{display:flex;text-align:left!important;}
+#ismatrix #isdarkfooter .socembed{display:flex;text-align:left!important;}
+#ismatrix #isdarkfooter .socembed span{display:flex;text-align:left!important;}
+#ismatrix .sss-tooltip,#ismatrix .sss-label{display:none!important;}
+#ismatrix #isdarkfooter .socembed a{opacity:.8;padding:0!important;color:#00ff00;text-shadow:0 0 5px #00ff00;}
+#ismatrix #isdarkfooter .socembed a:hover{opacity:1;color:#000;background:#00ff00;}
+#ismatrix #isdarkfooter .socembed .sss-theme-light,#ismatrix .sss-network{padding:0!important;border-radius:0;}
+#ismatrix #isdarkfooter .backhome{color:#00ff00;}
+#ismatrix #isdarkfooter .backhome a{color:#00ff00;opacity:.8;text-decoration:none;border-bottom:2px solid transparent;}
+#ismatrix #isdarkfooter .backhome a:hover{color:#000;background:#00ff00;border-bottom-color:#00ff00;opacity:1;}
+#ismatrix .site-main-header-inner-wrap{display:none!important;}
+#ismatrix .member-footer{display:block;padding:1.5em;margin:40px auto 0 auto;background-color:#000;}
+svg.tip{transform:scale(0.5) translate(1px,4px);transform-origin:bottom center;}
+.ixcls-1{fill:#00ff00;}
+.ixcls-1,.ixcls-2{fill-rule:evenodd;}
+.ixcls-2{fill:#00ff00;opacity:.8;}
+@keyframes scan{0%{background-position:0 0;}100%{background-position:0 20px;}}
+@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.7;box-shadow:0 0 40px #00ff00;}}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0;}}
+@keyframes matrix{0%{transform:translate(-50%,-50%) translateY(-100%);}100%{transform:translate(-50%,-50%) translateY(100%);}}
+
+#ismatrix #isdarkfooter .socembed,#ismatrix #isdarkfooter .backhome{padding:0!important;}
+@media only screen and (min-width:200px) and (max-width:700px){#ismatrix .member-social-list{flex-direction:column}#ismatrix .member-avatar-img{margin:20px auto 0 auto;}#ismatrix .upc-profile{max-width:90%!important;margin:30px auto 30px auto;border:2px solid #00ff00;background:#000;padding:0!important;}#ismatrix .member-avatar-container{margin-top:10px!important;}#ismatrix .member-name{width:100%;height:auto;margin:0 auto;text-align:center;font-size:19px;}#ismatrix .member-header-full{height:200px!important;}#ismatrix .supstars{display:flex;position:relative;top:100%;left:0;margin:0 auto;}#ismatrix .member-footer ul{padding:0;list-style-position:outside;margin:0 auto;}#ismatrix sup.pillit{display:inline-block;color:#00ff00;padding:1em 1.7em 1em;text-align:center;font-size:14px;background-color:#000;border-radius:0;box-shadow:0 0 15px #00ff00;transform:translateY(-20px);border:2px solid #00ff00;}#ismatrix .isflexiglass,#ismatrix #isdarkfooter .backhome,#ismatrix #isdarkfooter .socembed{flex-direction:column;justify-content:center;box-sizing:border-box;padding:0;margin:0 auto;}#ismatrix #isdarkfooter .socembed span{flex:1;justify-content:center;}#ismatrix .backhome{padding:0!important;margin:0 auto;}#ismatrix .member-social-wrapper{display:block;max-width:1000px!important;text-align:center;margin:40px auto 0 auto;padding:4em 0 1em;border-top:3px solid #00ff00;background:#0a0a0a;position:relative;}
+#ismatrix .member-social-wrapper::before{display:none!important}}
+#ismatrix .pofu{display:block;width:270px;position:absolute;bottom:40px;left:49%;transform:translateX(-49%);
+background:#000;color:#00ff00;padding:0;font-size:12px;font-family:'Courier New',monospace;z-index:10000;border-left:3px solid #00ff00;border-right:3px solid #00ff00;text-align:center;}
+#ismatrix .pw-footer-link {color:#00ff00;text-decoration: none;font-weight: 600;opacity:.7;transition: opacity 0.2s, font-size 0.2s;}#ismatrix .pw-footer-link:hover {opacity: 1;text-shadow:0 0 10px #18ba18;filter:brightness(140%);font-size:14px;}
+
+body.single-members{background:#0a0a0a;padding:0!important;margin:0 auto!important;}
+.nf-float-mobile ul.active a,.nf-float-mobile ul a{color:#00ff00;}.nf-float-mobile ul.active a:hover,.nf-float-mobile ul a:hover{color:#000;background-color:#00ff00;}.nf-float-mobile .menu-toggle span, .nf-float-mobile .menu-toggle span::before, .nf-float-mobile .menu-toggle span::after{background-color:#00ff00!important;}.nf-float-mobile{backdrop-filter: blur(10px)!important;border-bottom:1px solid #18ba18;}
+
+/** Nav **/
+.nf-float-mobile{display:block;position:fixed;background-color:rgba(0,0,0,0.7);bakdrop-filter:blur(11px);width:100%;height:auto;color:#fff;top:0;left:0;z-index:999999!important}.nf-float-mobile .menu-toggle{display:none;position:absolute;top:10px;right:15px;width:30px;height:30px;cursor:pointer;z-index:10000}.nf-float-mobile .menu-toggle span,.nf-float-mobile .menu-toggle span::before,.nf-float-mobile .menu-toggle span::after{position:absolute;width:30px;height:3px;background-color:rgba(221,192,252,.8);transition:.3s}.nf-float-mobile .menu-toggle span{top:50%;transform:translateY(-50%)}.nf-float-mobile .menu-toggle span::before,.nf-float-mobile .menu-toggle span::after{content:''}.nf-float-mobile .menu-toggle span::before{top:-10px}.nf-float-mobile .menu-toggle span::after{bottom:-10px}.nf-float-mobile .menu-toggle.active span{background-color:transparent}.nf-float-mobile .menu-toggle.active span::before{transform:rotate(45deg);top:0}.nf-float-mobile .menu-toggle.active span::after{transform:rotate(-45deg);bottom:0}.nf-float-mobile ul{padding:0;margin:0 auto;list-style:none;display:flex;gap:10px;flex-wrap:wrap}.nf-float-mobile ul li{padding:0}.nf-float-mobile a{display:block;padding:.7em 1em;text-align:center;color:rgba(221,192,252,.5);text-decoration:none;font-size:14px}.nf-float-mobile a:hover{color:rgba(221,192,252,1);text-decoration:none}@media screen and (max-width:768px){.nf-float-mobile{background-color:transparent}.nf-float-mobile .menu-toggle{display:block}.nf-float-mobile ul{position:fixed;top:0;right:-100%;width:250px;height:100vh;background-color:rgba(0,0,0,0.7);backdrop-filter: blur(10px);flex-direction:column;gap:0;margin:0;padding:60px 0 0;transition:right .3s ease;box-shadow:-2px 0 5px rgba(0,0,0,.3)}.nf-float-mobile ul.active{right:0;}.nf-float-mobile ul li{width:100%}.nf-float-mobile ul li a{padding:1em 2em;text-align:left;border-bottom:1px solid rgba(255,255,255,.1)}}
+
+
+/*** Public  ***/
+#ismatrix{padding:2em 0 0;margin:50px auto 0 auto;}
+#ismatrix .socembed .sss-theme-light{
+padding: 0 !important;border-radius: 0;display: flex;}
+#ismatrix .socembed span{display:block;}
+#ismatrix .socembed a{flex:1;width:40px;height:40px;}
+</style>
+</head>
+
+<body>
+
+<!--- Nav is Global to Members -->
+<div class="nf-float-mobile">
+	<div class="menu-toggle">
+		<span></span>
+	</div>
+	<ul>
+		<li><a href="#">Home</a></li>
+		<li><a href="#">FAQ</a></li>
+		<li><a href="#">Members</a></li>
+		<li><a href="#">Login</a></li>
+	</ul>
+</div>
+<!--- end nav -->
+
+
+
+<!-- Theme -->
+<div id="ismatrix">
+<div class="upc-profile">
+
+
+<div class="member-ctop">
+
+</div>
+
+<div class="member-badge-container">
+<span class="member-badge" style="background:#72aee6; color:#fff; padding:8px 25px; border-radius:30px; font-weight:bold; font-size:15px; display:inline-block; margin:0 auto;text-shadow:0 0 3px #000; ">PwchiMan<span style="margin-left:5px;margin-right:5px;">is</span>New Member</span>
+</div>
+
+<div class="member-header-full" style="width:100%; height:350px; background-image:url('images/neo-n-header.png'); background-size:cover; background-position:center; border-radius:10px 10px 0 0; display:nonex;">
+<span class="supstars"><sup class="pillit"><i style="font-style:normal;"></i> Neo n</sup></span>
+</div>
+
+<div class="member-avatar-container"><img src="images/mt-n.png" class="member-avatar-img wp-post-image" alt=""></div>
+
+<h1 class="member-name">Neon n</h1>
+<div class="member-about">
+
+
+<h1>Neo N</h1>
+<p>So, you like <strong>Neo n</strong> theme ...</p>
+<p>It is indeed... green and eye-catchy for some fans of the movie or the concept presented in the movie.</p>
+<h2>About Neo n</h2>
+<p>It is a mobile-friendly premium theme. Uses subtle animated touches for the most keen eyes.</p>
+<p>It is already glowing neon style so more visible animations would throw users on a journey they have not expected. It is safe, don't worry.</p>
+<h3>Let's dive into the techy stuff</h3>
+<ul>
+<li>Top "Pill" badge is user's role. Indicates the class of the user. Read more about <a href="https://pwchin.com/faq/#tip-badge" target="_blank" rel="noopener">user-roles</a> on FAQ page</li>
+<li>Supports wide, full header image. When enabled, the "pill" is displayed. Username with a star as prefix which is, an award on its own.</li>
+<li><strong>Profile Picture</strong>.  Avatar-like image in the center of the profile page.</li>
+<li>Name of the profile can be different than your username so, choose wisely.</li>
+<li><strong>About</strong> section to hold added content</li>
+<li>Social buttons are optional but recommended </li>
+</ul>
+<p> </p>
+
+
+</div>
+<div class="member-social-wrapper">
+<h3>Connect with PwchiMan</h3>
+<div class="member-social-list">
+<a href="#" target="_blank" rel="noopener" class="member-social-link">Facebook</a><a href="#" target="_blank" rel="noopener" class="member-social-link">𝕏</a><a href="#" target="_blank" rel="noopener" class="member-social-link">Instagram</a><a href="#" target="_blank" rel="noopener" class="member-social-link">Youtube</a><a href="#" target="_blank" rel="noopener" class="member-social-link" >Tiktok</a>
+</div>
+</div>
+<div class="member-edit-wrapper">
+<a href="#" class="member-edit-btn">Edit Profile</a></div>
+
+
+</div>
+
+
+<!-- End Theme -->
+
+<!-- footer is external but themed -->
+<div class="member-footer">
+<div id="isdarkfooter">
+
+	<div class="isflexiglass">
+		<div class="backhome">
+			<!-- shows 4 logged in -->
+     <div class="asadar">
+<span class="iswrpuser"><i style="font-weight:500;margin-right:8px;font-style:normal;">*username</i> did you know...</span>
+
+	<p style="font-weight:700;text-transform:uppercase;"><span class="qtip"><svg class="tip" xmlns="http://www.w3.org/2000/svg" width="20" height="28" viewBox="0 0 20 28"><path id="sok" class="ixcls-1" fill="currentColor" d="M15.58,13.57c0,0.049.02,0.1,0.02,0.145l-1.2,2.428a3.9,3.9,0,0,1-7.8,0L5.4,13.715c0-.05.017-0.1,0.02-0.145A6.656,6.656,0,0,1,2,7.993C2,4.131,5.806,1,10.5,1S19,4.131,19,7.993A6.656,6.656,0,0,1,15.58,13.57Z"/><path id="blb" class="ixcls-2" fill="currentColor" d="M9.1,22h2.8A1.921,1.921,0,0,1,14,23.667L13,26.5A1.5,1.5,0,0,1,11.5,28h-2A1.5,1.5,0,0,1,8,26.5L7,23.667A1.921,1.921,0,0,1,9.1,22Z"/></svg></span> pro tip:</p>
+<ol>
+	<li><a href="#" target="_blank">Profile page can be customized</a></li>
+	<li><a href="#" target="_blank">Set profile privacy Public or Private</a></li>
+	<li><a href="#" target="_blank">Use Social Links feature for max social presence</a></li>
+	</ol>
+</div>
+<!-- end logged in -->
+
+<!-- shows 2 visitor-->			
+<p style="opacity:0">
+	Log-in
+</p>
+<!-- shows 2 viitor-->        
+            
+		</div>
+	
+	<div class="socembed"><span>Share:</span> 
+    <div class="sss-sharing sss-style-horizontal sss-size-medium sss-theme-light sss-show-labels"><a href="#" class="sss-network sss-facebook" target="_blank" rel="noopener noreferrer" data-network="facebook" title="Share on Facebook"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path fill="#000000" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm4.682 6.273A3.273 3.273 0 0 1 12.954 4h2.91c0.2 0 0.363 0.163 0.363 0.364v2.909c0 0.2 -0.163 0.363 -0.363 0.363h-1.455a1.09 1.09 0 0 0 -1.09 1.091v1.091h2.545a0.364 0.364 0 0 1 0.352 0.452l-0.727 2.91a0.363 0.363 0 0 1 -0.353 0.274h-1.818v6.182a0.364 0.364 0 0 1 -0.364 0.364h-2.909a0.364 0.364 0 0 1 -0.363 -0.364v-6.181H7.864a0.364 0.364 0 0 1 -0.364 -0.364v-2.91c0 -0.2 0.163 -0.363 0.364 -0.363h1.818V7.273Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">Facebook</span><span class="sss-tooltip">Share on Facebook</span></a><a href="#" class="sss-network sss-twitter" target="_blank" rel="noopener noreferrer" data-network="twitter" title="Share on Twitter"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path fill="#000000" fill-rule="evenodd" d="M5 1C2.79086 1 1 2.79086 1 5v14c0 2.2091 1.79086 4 4 4h14c2.2091 0 4 -1.7909 4 -4V5c0 -2.20914 -1.7909 -4 -4 -4H5Zm-0.33429 3.5c-0.17536 0.06527 -0.32332 0.19509 -0.40968 0.3683 -0.12689 0.2545 -0.09892 0.55889 0.07223 0.78601l5.61418 7.45029 -5.91591 6.344c-0.01551 0.0167 -0.03011 0.0338 -0.04382 0.0514h2.04691l4.82948 -5.179 3.7133 4.9278c0.0871 0.1155 0.2043 0.2018 0.3364 0.2512h4.4223c0.1748 -0.0654 0.3224 -0.195 0.4085 -0.3679 0.1269 -0.2545 0.099 -0.5589 -0.0722 -0.786l-5.6142 -7.4503L20.0173 4.5h-2.051l-4.8298 5.17932 -3.7133 -4.92774c-0.08729 -0.11583 -0.20496 -0.20227 -0.3375 -0.25158H4.66571ZM15.5454 18.0475 6.4315 5.95294h2.01878L17.5642 18.0475h-2.0188Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">Twitter</span><span class="sss-tooltip">Share on Twitter</span></a><a href="#" class="sss-network sss-pinterest" target="_blank" rel="noopener noreferrer" data-network="pinterest" title="Share on Pinterest"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+<path fill="#000000" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm7.028 3C8.53 4 6.063 6.712 5.79 9.416c-0.152 1.505 0.146 2.851 0.762 3.752a1.09 1.09 0 0 0 1.8 -1.232c-0.252 -0.37 -0.507 -1.164 -0.392 -2.3 0.167 -1.65 1.75 -3.454 4.068 -3.454 1.819 0 2.81 0.656 3.356 1.41 0.58 0.803 0.767 1.874 0.652 2.823 -0.119 0.984 -0.419 1.98 -0.899 2.668 -0.446 0.639 -0.994 0.964 -1.777 0.886 -0.627 -0.063 -0.916 -0.404 -1.096 -0.83a2.67 2.67 0 0 1 -0.189 -0.77c0.21 -0.725 0.381 -1.401 0.47 -1.957 0.06 -0.36 0.1 -0.758 0.054 -1.113 -0.034 -0.275 -0.206 -1.085 -1.063 -1.274a1.783 1.783 0 0 0 -1.753 0.575c-0.424 0.484 -0.577 1.137 -0.577 1.795 0 0.322 0.082 0.641 0.156 0.878 0.08 0.255 0.182 0.507 0.276 0.72 0.058 0.13 0.114 0.25 0.166 0.356l-0.042 0.135c-0.305 0.984 -0.676 2.07 -1.042 3.134l-0.148 0.43c-0.313 0.905 -0.615 1.782 -0.855 2.527a1.09 1.09 0 1 0 2.077 0.668c0.232 -0.721 0.526 -1.573 0.84 -2.481l0.149 -0.434c0.12 -0.347 0.24 -0.7 0.36 -1.053 0.476 0.437 1.125 0.777 2 0.865 1.737 0.174 2.991 -0.673 3.784 -1.81 0.759 -1.088 1.133 -2.472 1.275 -3.654 0.164 -1.359 -0.076 -3.015 -1.05 -4.363C16.142 4.917 14.449 4 12.028 4Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">Pinterest</span><span class="sss-tooltip">Share on Pinterest</span></a><a href="#" class="sss-network sss-whatsapp" target="_blank" rel="noopener noreferrer" data-network="whatsapp" title="Share on WhatsApp"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path fill="#000000" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm7 3.5a7.5 7.5 0 0 0 -6.56 11.14l-0.667 3.587 3.588 -0.668A7.5 7.5 0 1 0 12 4.5Zm-1.947 3.38c-0.32 -0.016 -0.916 0.024 -1.362 0.47 -0.727 0.727 -0.735 1.869 -0.45 2.907 0.29 1.057 0.914 2.135 1.64 2.861 0.728 0.727 1.805 1.35 2.862 1.641 1.038 0.285 2.18 0.277 2.907 -0.45 0.446 -0.446 0.486 -1.04 0.47 -1.362a0.882 0.882 0 0 0 -0.384 -0.67l-0.91 -0.65a1.023 1.023 0 0 0 -1.317 0.11l-0.46 0.459c-0.37 -0.152 -0.967 -0.458 -1.377 -0.868 -0.41 -0.41 -0.716 -1.007 -0.867 -1.377l0.459 -0.46c0.353 -0.353 0.4 -0.91 0.11 -1.317l-0.65 -0.91a0.882 0.882 0 0 0 -0.67 -0.385Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">WhatsApp</span><span class="sss-tooltip">Share on WhatsApp</span></a><a href="#" class="sss-network sss-reddit" target="_blank" rel="noopener noreferrer" data-network="reddit" title="Share on Reddit"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path fill="#000000" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm10.38 5.74 -2.235 -0.497 -0.519 3.11c1.55 0.095 2.967 0.54 4.065 1.235a1.956 1.956 0 1 1 2.22 3.165c0.015 0.125 0.022 0.252 0.022 0.38 0 1.412 -0.858 2.625 -2.112 3.461 -1.257 0.838 -2.963 1.34 -4.821 1.34 -1.858 0 -3.564 -0.502 -4.821 -1.34 -1.254 -0.836 -2.112 -2.049 -2.112 -3.46 0 -0.129 0.007 -0.256 0.02 -0.381a1.955 1.955 0 1 1 2.222 -3.165c1.139 -0.721 2.62 -1.173 4.237 -1.245l0.639 -3.83a0.534 0.534 0 0 1 0.642 -0.434l2.864 0.637a1.6 1.6 0 1 1 -0.311 1.023Zm-6.224 7.393a1.067 1.067 0 1 0 0 -2.133 1.067 1.067 0 0 0 0 2.133Zm5.688 0a1.067 1.067 0 1 0 0 -2.133 1.067 1.067 0 0 0 0 2.133Zm-4.89 1.482a0.533 0.533 0 0 0 -0.887 0.592c0.218 0.326 0.623 0.553 1.08 0.7 0.48 0.155 1.1 0.249 1.853 0.249 0.753 0 1.373 -0.094 1.852 -0.248 0.458 -0.148 0.863 -0.375 1.08 -0.701a0.533 0.533 0 1 0 -0.887 -0.592c-0.02 0.03 -0.148 0.158 -0.52 0.277 -0.35 0.113 -0.855 0.197 -1.525 0.197 -0.67 0 -1.175 -0.084 -1.526 -0.197 -0.37 -0.12 -0.5 -0.247 -0.52 -0.277Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">Reddit</span><span class="sss-tooltip">Share on Reddit</span></a><a href="#" class="sss-network sss-telegram" target="_blank" rel="noopener noreferrer" data-network="telegram" title="Share on Telegram"><svg class="sss-icon sss-icon-svg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+  <path fill="#000000" fill-rule="evenodd" d="M5 1a4 4 0 0 0 -4 4v14a4 4 0 0 0 4 4h14a4 4 0 0 0 4 -4V5a4 4 0 0 0 -4 -4H5Zm15 11a8 8 0 1 1 -16 0 8 8 0 0 1 16 0Zm-12.986 -0.77a0.185 0.185 0 0 0 -0.118 0.17c0 0.074 0.049 0.144 0.118 0.17l1.929 0.704 0.584 2.872 0 0.004a0.564 0.564 0 0 0 0.147 0.286 0.52 0.52 0 0 0 0.525 0.12 1.675 1.675 0 0 0 0.159 -0.076 6.84 6.84 0 0 0 0.256 -0.151c0.196 -0.12 0.444 -0.28 0.685 -0.436a86.15 86.15 0 0 0 0.87 -0.573l0.073 -0.048 1.905 1.378a0.185 0.185 0 0 0 0.17 0.023c0.056 -0.02 0.1 -0.07 0.114 -0.128l1.787 -7.519a0.185 0.185 0 0 0 -0.056 -0.179 0.185 0.185 0 0 0 -0.185 -0.033L7.014 11.23Zm3.169 3.493 -0.53 -2.6 4.009 -2.07a0.112 0.112 0 0 1 0.138 0.035 0.112 0.112 0 0 1 -0.016 0.142l-3.012 2.702 -0.59 1.791Z" clip-rule="evenodd" stroke-width="1"></path>
+</svg><span class="sss-label">Telegram</span><span class="sss-tooltip">Share on Telegram</span></a></div></div>
+		
+		</div>
+</div>	
+
+	
+</div>
+<!--/end footer -->
+</div>
+</body>
+</html>
